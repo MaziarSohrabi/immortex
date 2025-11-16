@@ -7,18 +7,18 @@ const Home = () => {
       {/* هیرو سکشن */}
       <section style={heroStyle}>
         <div style={heroContentStyle}>
-          <h1 style={heroTitleStyle}>به Immortex خوش آمدید</h1>
+          <h1>به Immortex خوش آمدید</h1>
           <p style={heroSubtitleStyle}>
             اولین بازار معکوس پوشاک در ایران
             <br />
             شما تقاضا می‌کنید، فروشگاه‌ها به شما پیشنهاد می‌دهند!
           </p>
           <div style={heroButtonsStyle}>
-            <Link to="/register/buyer" style={primaryButtonStyle}>
-              به عنوان خریدار ثبت‌نام کنید
+            <Link to="/register/buyer" className="btn-primary">
+              ثبت‌نام خریدار
             </Link>
-            <Link to="/register/seller" style={secondaryButtonStyle}>
-              به عنوان فروشگاه ثبت‌نام کنید
+            <Link to="/register/seller" className="btn-secondary">
+              ثبت‌نام فروشگاه
             </Link>
           </div>
         </div>
@@ -28,19 +28,19 @@ const Home = () => {
       <section style={featuresStyle}>
         <h2 style={sectionTitleStyle}>چگونه کار می‌کند؟</h2>
         <div style={featuresGridStyle}>
-          <div style={featureCardStyle}>
+          <div className="card">
             <h3>۱. ثبت تقاضا</h3>
             <p>نیاز پوشاک خود را با جزئیات ثبت کنید</p>
           </div>
-          <div style={featureCardStyle}>
+          <div className="card">
             <h3>۲. دریافت پیشنهاد</h3>
             <p>فروشگاه‌های معتبر به شما پیشنهاد می‌دهند</p>
           </div>
-          <div style={featureCardStyle}>
+          <div className="card">
             <h3>۳. مقایسه و انتخاب</h3>
             <p>بهترین پیشنهاد را از بین گزینه‌ها انتخاب کنید</p>
           </div>
-          <div style={featureCardStyle}>
+          <div className="card">
             <h3>۴. خرید مطمئن</h3>
             <p>با اطمینان و تضمین کیفیت خرید کنید</p>
           </div>
@@ -51,11 +51,11 @@ const Home = () => {
 };
 
 const heroStyle = {
-  background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-  color: 'white',
+  background: 'linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%)',
+  color: 'var(--primary-foreground)',
   padding: '4rem 0',
   textAlign: 'center',
-  borderRadius: '15px',
+  borderRadius: 'var(--radius)',
   margin: '2rem 0'
 };
 
@@ -64,15 +64,11 @@ const heroContentStyle = {
   margin: '0 auto'
 };
 
-const heroTitleStyle = {
-  fontSize: '2.5rem',
-  marginBottom: '1rem'
-};
-
 const heroSubtitleStyle = {
-  fontSize: '1.2rem',
+  fontSize: '1.1rem',
   marginBottom: '2rem',
-  lineHeight: '1.6'
+  lineHeight: '1.8',
+  opacity: 0.9
 };
 
 const heroButtonsStyle = {
@@ -82,51 +78,19 @@ const heroButtonsStyle = {
   flexWrap: 'wrap'
 };
 
-const primaryButtonStyle = {
-  backgroundColor: '#fff',
-  color: '#667eea',
-  padding: '12px 24px',
-  borderRadius: '8px',
-  textDecoration: 'none',
-  fontWeight: 'bold',
-  transition: 'all 0.3s ease'
-};
-
-const secondaryButtonStyle = {
-  backgroundColor: 'transparent',
-  color: '#fff',
-  border: '2px solid #fff',
-  padding: '12px 24px',
-  borderRadius: '8px',
-  textDecoration: 'none',
-  fontWeight: 'bold',
-  transition: 'all 0.3s ease'
-};
-
 const featuresStyle = {
   padding: '4rem 0'
 };
 
 const sectionTitleStyle = {
   textAlign: 'center',
-  marginBottom: '3rem',
-  fontSize: '2rem',
-  color: '#333'
+  marginBottom: '3rem'
 };
 
 const featuresGridStyle = {
   display: 'grid',
   gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-  gap: '2rem'
-};
-
-const featureCardStyle = {
-  backgroundColor: 'white',
-  padding: '2rem',
-  borderRadius: '12px',
-  boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-  textAlign: 'center',
-  transition: 'transform 0.3s ease'
+  gap: '1.5rem'
 };
 
 export default Home;
